@@ -34,10 +34,10 @@ const Header = () => {
     >
       <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 relative">
           <div
             ref={logoRef}
-            className="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl border-4 border-black"
+            className="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl border-4 border-black relative"
           >
             <span className="text-grotesk">D</span>
           </div>

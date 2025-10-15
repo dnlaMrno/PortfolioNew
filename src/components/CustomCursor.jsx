@@ -119,11 +119,11 @@ const CustomCursor = () => {
     hoverElements.forEach(element => {
       element.addEventListener('mouseenter', () => {
         gsap.to(cursorDot.current, {
-          backgroundColor: 'white',
+          backgroundColor: 'var(--color-accent)',
           duration: 0.2
         });
         gsap.to(cursorOutline.current, {
-          borderColor: 'white',
+          borderColor: 'var(--color-accent)',
           duration: 0.2
         });
       });

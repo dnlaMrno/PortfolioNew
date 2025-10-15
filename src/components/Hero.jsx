@@ -150,7 +150,7 @@ const Hero = () => {
 
           {/* Floating elements with glitch effect */}
           <div className="absolute -top-4 -right-4 w-16 h-16 bg-black border-4 border-black animate-pulse hover:animate-bounce"></div>
-          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[var(--accent)] border-4 border-black rotate-45 hover:rotate-[225deg] transition-transform duration-300"></div>
+          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[var(--color-accent)] border-4 border-black rotate-45 hover:rotate-[225deg] transition-transform duration-300"></div>
 
           {/* Additional glitch elements */}
           <div className="absolute top-2 left-2 w-2 h-8 bg-red-500 opacity-0 hover:opacity-100 transition-opacity"></div>

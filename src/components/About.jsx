@@ -104,7 +104,7 @@ const About = () => {
                 {skills.map((skill) => (
                   <div
                     key={skill}
-                    className="skill-item brutal-card p-4 bg-white text-center hover:bg-[var(--accent)] hover:text-white transition-colors duration-300 cursor-pointer"
+                    className="skill-item brutal-card p-4 bg-white text-center hover:bg-[var(--color-accent)] hover:text-white transition-colors duration-300 cursor-pointer"
                   >
                     <span className="font-bold text-sm">{skill}</span>
                   </div>
