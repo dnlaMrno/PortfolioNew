@@ -66,14 +66,6 @@ const Header = () => {
                 About
               </a>
             </li>
-            <li>
-              <a
-                href="#contact"
-                className="text-black font-semibold uppercase tracking-wider text-sm hover:text-[var(--accent)] transition-colors duration-300"
-              >
-                Contact
-              </a>
-            </li>
           </ul>
         </nav>
 

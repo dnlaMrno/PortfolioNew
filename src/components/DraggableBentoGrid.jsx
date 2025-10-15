@@ -1,6 +1,4 @@
 import { useRef, useEffect } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -63,7 +61,7 @@ const projects = [
   }
 ];
 
-const DraggableBentoGrid = () => {
+const BentoGrid = () => {
   const gridRef = useRef(null);
 
   useEffect(() => {
@@ -122,24 +120,9 @@ const DraggableBentoGrid = () => {
           className="grid grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[200px]"
         >
           {projects.map((project) => (
-              <motion.div
+              <div
                 key={project.id}
-                className={`bento-item ${getSizeClass(project.size)} draggable`}
-                drag
-                dragConstraints={gridRef}
-                dragElastic={0.1}
-                whileDrag={{
-                  scale: 1.05,
-                  zIndex: 50,
-                  rotate: 5
-                }}
-                whileHover={{
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
-                }}
-                onDragStart={() => {}}
-                onDragEnd={() => {}}
-                layout
+                className={`bento-item ${getSizeClass(project.size)}`}
               >
                 <div className={`brutal-card h-full p-6 ${project.color} ${project.textColor} flex flex-col justify-between relative overflow-hidden`}>
                   {/* Project Content */}
@@ -180,29 +163,19 @@ const DraggableBentoGrid = () => {
                     </div>
                   </div>
 
-                  {/* Drag Indicator */}
-                  <div className="absolute top-2 right-2 opacity-30">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                      <circle cx="3" cy="3" r="1"/>
-                      <circle cx="8" cy="3" r="1"/>
-                      <circle cx="13" cy="3" r="1"/>
-                      <circle cx="3" cy="8" r="1"/>
-                      <circle cx="8" cy="8" r="1"/>
-                      <circle cx="13" cy="8" r="1"/>
-                      <circle cx="3" cy="13" r="1"/>
-                      <circle cx="8" cy="13" r="1"/>
-                      <circle cx="13" cy="13" r="1"/>
-                    </svg>
+                  {/* Project Indicator */}
+                  <div className="absolute top-2 right-2 opacity-60">
+                    <div className="w-3 h-3 border-2 border-current"></div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
         </div>
 
         {/* Helper Text */}
         <div className="text-center mt-12">
           <p className="text-mono text-sm text-gray-500">
-            💡 Tip: Arrastra las cards para reorganizar el grid
+            ⚡ Explora mis proyectos con diseño brutalist
           </p>
         </div>
       </div>
@@ -210,4 +183,4 @@ const DraggableBentoGrid = () => {
   );
 };
 
-export default DraggableBentoGrid;
+export default BentoGrid;

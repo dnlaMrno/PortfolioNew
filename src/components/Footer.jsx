@@ -27,12 +27,6 @@ const Footer = () => {
             >
               About
             </a>
-            <a
-              href="#contact"
-              className="text-gray-400 hover:text-[var(--accent)] transition-colors text-sm font-bold uppercase tracking-wider"
-            >
-              Contact
-            </a>
           </div>
 
           {/* Right */}

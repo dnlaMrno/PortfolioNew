@@ -3,9 +3,8 @@ import { useSmoothScroll } from './hooks/useSmoothScroll';
 import CustomCursor from './components/CustomCursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import DraggableBentoGrid from './components/DraggableBentoGrid';
+import BentoGrid from './components/DraggableBentoGrid';
 import About from './components/About';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -35,9 +34,8 @@ function App() {
       {/* Main Content */}
       <main>
         <Hero />
-        <DraggableBentoGrid />
+        <BentoGrid />
         <About />
-        <Contact />
       </main>
 
       {/* Footer */}

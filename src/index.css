@@ -91,14 +91,6 @@
     font-family: 'Space Grotesk', sans-serif;
   }
 
-  .draggable {
-    cursor: grab;
-    user-select: none;
-  }
-
-  .draggable:active {
-    cursor: grabbing;
-  }
 
   .text-accent {
     color: var(--accent);
@@ -117,5 +109,140 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
+  }
+
+  .glitch-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glitch-image {
+    position: relative;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .glitch-image::before,
+  .glitch-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .glitch-container:hover .glitch-image::before {
+    opacity: 1;
+    animation: glitch-red 0.3s infinite;
+    mix-blend-mode: multiply;
+    filter: hue-rotate(0deg) saturate(200%);
+  }
+
+  .glitch-container:hover .glitch-image::after {
+    opacity: 1;
+    animation: glitch-blue 0.4s infinite;
+    mix-blend-mode: multiply;
+    filter: hue-rotate(180deg) saturate(200%);
+  }
+
+  .glitch-container:hover .glitch-image {
+    animation: glitch-main 0.5s infinite;
+  }
+
+  @keyframes glitch-main {
+    0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
+    10% { transform: translate(-2px, 1px); filter: hue-rotate(90deg); }
+    20% { transform: translate(-1px, -1px); filter: hue-rotate(180deg); }
+    30% { transform: translate(1px, 2px); filter: hue-rotate(270deg); }
+    40% { transform: translate(2px, -1px); filter: hue-rotate(0deg); }
+    50% { transform: translate(-1px, 1px); filter: hue-rotate(90deg); }
+    60% { transform: translate(-2px, 1px); filter: hue-rotate(180deg); }
+    70% { transform: translate(2px, 1px); filter: hue-rotate(270deg); }
+    80% { transform: translate(-1px, -1px); filter: hue-rotate(0deg); }
+    90% { transform: translate(1px, 2px); filter: hue-rotate(90deg); }
+  }
+
+  @keyframes glitch-red {
+    0%, 100% { transform: translate(0); opacity: 0.8; }
+    10% { transform: translate(-5px, 0); }
+    20% { transform: translate(5px, 0); }
+    30% { transform: translate(-5px, 0); }
+    40% { transform: translate(5px, 0); }
+    50% { transform: translate(-5px, 0); }
+    60% { transform: translate(5px, 0); }
+    70% { transform: translate(-5px, 0); }
+    80% { transform: translate(5px, 0); }
+    90% { transform: translate(-5px, 0); }
+  }
+
+  @keyframes glitch-blue {
+    0%, 100% { transform: translate(0); opacity: 0.8; }
+    10% { transform: translate(3px, 0); }
+    20% { transform: translate(-3px, 0); }
+    30% { transform: translate(3px, 0); }
+    40% { transform: translate(-3px, 0); }
+    50% { transform: translate(3px, 0); }
+    60% { transform: translate(-3px, 0); }
+    70% { transform: translate(3px, 0); }
+    80% { transform: translate(-3px, 0); }
+    90% { transform: translate(3px, 0); }
+  }
+
+  .fragment-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 0, 0, 0.1) 25%,
+      transparent 50%,
+      rgba(0, 255, 255, 0.1) 75%,
+      transparent 100%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .glitch-container:hover .fragment-overlay {
+    opacity: 1;
+    animation: scan-lines 0.1s infinite;
+  }
+
+  @keyframes scan-lines {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+
+  .glitch-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff00;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glitch-container:hover .glitch-text {
+    opacity: 1;
+    animation: terminal-blink 0.5s infinite;
+  }
+
+  @keyframes terminal-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
   }
 }

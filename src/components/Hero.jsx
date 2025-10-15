@@ -30,10 +30,34 @@ const Hero = () => {
       '-=0.4'
     )
     .fromTo(imageRef.current,
-      { scale: 0.8, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1, ease: 'back.out(1.7)' },
+      { scale: 0.8, opacity: 0, rotationY: 45 },
+      { scale: 1, opacity: 1, rotationY: 0, duration: 1.2, ease: 'back.out(1.7)' },
       '-=1'
     );
+
+    // Glitch container random shake
+    gsap.to(imageRef.current, {
+      x: () => Math.random() * 2 - 1,
+      y: () => Math.random() * 2 - 1,
+      duration: 0.1,
+      repeat: -1,
+      yoyo: true,
+      ease: 'none'
+    });
+
+    // Floating elements orbit animation
+    const floatingElements = imageRef.current?.querySelectorAll('.absolute');
+    if (floatingElements) {
+      floatingElements.forEach((el, index) => {
+        gsap.to(el, {
+          rotation: 360,
+          duration: 8 + index * 2,
+          repeat: -1,
+          ease: 'none',
+          transformOrigin: 'center center'
+        });
+      });
+    }
 
     // Subtle parallax effect (much less movement)
     gsap.to(heroRef.current, {
@@ -77,35 +101,52 @@ const Hero = () => {
           </p>
 
           <div ref={ctaRef} className="flex gap-4">
-            <button className="brutal-button">
+            <a href="#work" className="brutal-button">
               Ver Proyectos
-            </button>
-            <button className="border-4 border-black bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors">
-              Contacto
-            </button>
+            </a>
+            <a href="#about" className="border-4 border-black bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors no-underline">
+              Sobre Mí
+            </a>
           </div>
         </div>
 
         {/* Right Content - Visual */}
         <div ref={imageRef} className="relative">
-          <div className="brutal-card p-4 aspect-square flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
+          <div className="brutal-card p-4 aspect-square bg-black overflow-hidden glitch-container">
+            <div className="w-full h-full relative">
               <img
-                src="/images/pixel-portrait.png"
+                src="public/images/pixel-portrait.png"
                 alt="Daniela Porras - Pixel Art Portrait"
-                className="w-full h-full object-contain rounded-sm pixel-art"
+                className="w-full h-full object-cover pixel-art glitch-image"
                 style={{
                   imageRendering: 'pixelated',
                   imageRendering: '-moz-crisp-edges',
-                  imageRendering: 'crisp-edges'
+                  imageRendering: 'crisp-edges',
+                  backgroundImage: 'url(/pixel-portrait.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
                 }}
               />
+
+              {/* Fragment RGB Overlay */}
+              <div className="fragment-overlay"></div>
+
+              {/* Terminal Text */}
+              <div className="glitch-text">
+                &gt; SYSTEM_BREACH_DETECTED_<br/>
+                &gt; LOADING_PROFILE.EXE<br/>
+                &gt; STATUS: FRAGMENTING...
+              </div>
             </div>
           </div>
 
-          {/* Floating elements */}
-          <div className="absolute -top-4 -right-4 w-16 h-16 bg-black border-4 border-black animate-pulse"></div>
-          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[var(--accent)] border-4 border-black rotate-45"></div>
+          {/* Floating elements with glitch effect */}
+          <div className="absolute -top-4 -right-4 w-16 h-16 bg-black border-4 border-black animate-pulse hover:animate-bounce"></div>
+          <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[var(--accent)] border-4 border-black rotate-45 hover:rotate-[225deg] transition-transform duration-300"></div>
+
+          {/* Additional glitch elements */}
+          <div className="absolute top-2 left-2 w-2 h-8 bg-red-500 opacity-0 hover:opacity-100 transition-opacity"></div>
+          <div className="absolute bottom-8 right-8 w-8 h-2 bg-cyan-400 opacity-0 hover:opacity-100 transition-opacity"></div>
         </div>
       </div>
     </section>
