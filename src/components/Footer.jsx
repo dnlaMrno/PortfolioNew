@@ -9,42 +9,35 @@ const Footer = () => {
               DANIELA PORRAS
             </div>
             <div className="text-mono text-sm text-gray-400">
-              Frontend Developer • Brutal Design Enthusiast
+              Frontend Developer
             </div>
           </div>
 
           {/* Center */}
           <div className="flex gap-6">
             <a
-              href="#work"
-              className="text-gray-400 hover:text-[var(--accent)] transition-colors text-sm font-bold uppercase tracking-wider"
+              href="#proyectos"
+              className="text-gray-400 hover:text-[var(--accentFooter)] transition-colors text-sm font-bold uppercase tracking-wider"
             >
-              Work
+              Proyectos
             </a>
             <a
               href="#about"
-              className="text-gray-400 hover:text-[var(--accent)] transition-colors text-sm font-bold uppercase tracking-wider"
+              className="text-gray-400 hover:text-[var(--accentFooter)] transition-colors text-sm font-bold uppercase tracking-wider"
             >
-              About
+              Sobre Mí
             </a>
           </div>
 
           {/* Right */}
           <div className="text-center md:text-right">
             <div className="text-mono text-sm text-gray-400">
-              © 2024 • Designed & Coded with ❤️
+              © 2024
             </div>
             <div className="text-xs text-gray-500 mt-1">
               Built with React + GSAP + Tailwind
             </div>
           </div>
-        </div>
-
-        {/* Bottom Border */}
-        <div className="mt-8 pt-8 border-t-4 border-gray-800 text-center">
-          <p className="text-mono text-xs text-gray-500">
-            This portfolio features drag & drop interactions, smooth scroll, and brutal design principles.
-          </p>
         </div>
       </div>
     </footer>

@@ -52,10 +52,10 @@ const Header = () => {
           <ul className="flex gap-8 list-none">
             <li>
               <a
-                href="#work"
+                href="#proyectos"
                 className="text-black font-semibold uppercase tracking-wider text-sm hover:text-[var(--accent)] transition-colors duration-300"
               >
-                Work
+                Proyectos
               </a>
             </li>
             <li>
@@ -63,16 +63,21 @@ const Header = () => {
                 href="#about"
                 className="text-black font-semibold uppercase tracking-wider text-sm hover:text-[var(--accent)] transition-colors duration-300"
               >
-                About
+                Sobre Mí
               </a>
             </li>
           </ul>
         </nav>
 
         {/* CTA Button */}
-        <button className="brutal-button">
-          Hire Me
-        </button>
+        <a
+          href="https://www.linkedin.com/in/porras-daniela/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="brutal-button"
+        >
+          Contactame
+        </a>
       </div>
     </header>
   );

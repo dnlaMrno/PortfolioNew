@@ -22,6 +22,66 @@ const CustomCursor = () => {
         duration: 0.3,
         ease: 'power2.out'
       });
+
+      // Check if cursor is over any black background element
+      let isOverBlackElement = false;
+
+      // Check specific selectors
+      const selectors = [
+        'footer',
+        '.bg-black',
+        '.brutal-button',
+        '[class*="bg-black"]'
+      ];
+
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+          const rect = element.getBoundingClientRect();
+          if (clientY >= rect.top &&
+              clientY <= rect.bottom &&
+              clientX >= rect.left &&
+              clientX <= rect.right) {
+            isOverBlackElement = true;
+          }
+        });
+      });
+
+      // Check for elements with bg-[var(--accent)] class specifically
+      const accentElements = document.querySelectorAll('*');
+      accentElements.forEach(element => {
+        if (element.className && element.className.includes('bg-[var(--accent)]')) {
+          const rect = element.getBoundingClientRect();
+          if (clientY >= rect.top &&
+              clientY <= rect.bottom &&
+              clientX >= rect.left &&
+              clientX <= rect.right) {
+            isOverBlackElement = true;
+          }
+        }
+      });
+
+      if (isOverBlackElement) {
+        // Change cursor to white
+        gsap.to(cursorDot.current, {
+          backgroundColor: 'white',
+          duration: 0.2
+        });
+        gsap.to(cursorOutline.current, {
+          borderColor: 'white',
+          duration: 0.2
+        });
+      } else {
+        // Change cursor back to black/accent
+        gsap.to(cursorDot.current, {
+          backgroundColor: 'var(--accent)',
+          duration: 0.2
+        });
+        gsap.to(cursorOutline.current, {
+          borderColor: 'var(--accent)',
+          duration: 0.2
+        });
+      }
     };
 
     const onMouseEnterLink = () => {
@@ -54,11 +114,40 @@ const CustomCursor = () => {
       link.addEventListener('mouseleave', onMouseLeaveLink);
     });
 
+    // Add specific listeners for elements that change to black on hover
+    const hoverElements = document.querySelectorAll('.skill-item');
+    hoverElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        gsap.to(cursorDot.current, {
+          backgroundColor: 'white',
+          duration: 0.2
+        });
+        gsap.to(cursorOutline.current, {
+          borderColor: 'white',
+          duration: 0.2
+        });
+      });
+      element.addEventListener('mouseleave', () => {
+        gsap.to(cursorDot.current, {
+          backgroundColor: 'var(--accent)',
+          duration: 0.2
+        });
+        gsap.to(cursorOutline.current, {
+          borderColor: 'var(--accent)',
+          duration: 0.2
+        });
+      });
+    });
+
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
       links.forEach(link => {
         link.removeEventListener('mouseenter', onMouseEnterLink);
         link.removeEventListener('mouseleave', onMouseLeaveLink);
+      });
+      hoverElements.forEach(element => {
+        element.removeEventListener('mouseenter', () => {});
+        element.removeEventListener('mouseleave', () => {});
       });
     };
   }, []);

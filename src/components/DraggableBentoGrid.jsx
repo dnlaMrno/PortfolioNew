@@ -7,54 +7,54 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: "E-commerce Brutal",
-    description: "Tienda online con animaciones GSAP y micro-interacciones",
-    tech: ["React", "GSAP", "Tailwind"],
+    title: "Lorem Ipsum Dolor",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    tech: ["Lorem", "Ipsum", "Dolor"],
     size: "large",
     color: "bg-white",
     textColor: "text-black"
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    description: "Panel de control con gráficos dinámicos",
-    tech: ["Vue", "D3.js", "TypeScript"],
+    title: "Sit Amet Consectetur",
+    description: "Sed do eiusmod tempor incididunt ut labore et dolore",
+    tech: ["Amet", "Sit", "Consectetur"],
     size: "medium",
     color: "bg-black",
     textColor: "text-white"
   },
   {
     id: 3,
-    title: "Portfolio 3D",
-    description: "Experiencia inmersiva con Three.js",
-    tech: ["Three.js", "React", "Blender"],
+    title: "Magna Aliqua",
+    description: "Ut enim ad minim veniam quis nostrud exercitation",
+    tech: ["Magna", "Aliqua", "Veniam"],
     size: "small",
-    color: "bg-[var(--accent)]",
-    textColor: "text-white"
+    color: "bg-gray-200",
+    textColor: "text-black"
   },
   {
     id: 4,
-    title: "App Mobile",
-    description: "Aplicación híbrida con animaciones fluidas",
-    tech: ["React Native", "Lottie", "Firebase"],
+    title: "Ullamco Laboris",
+    description: "Duis aute irure dolor in reprehenderit in voluptate",
+    tech: ["Ullamco", "Laboris", "Irure"],
     size: "medium",
     color: "bg-gray-200",
     textColor: "text-black"
   },
   {
     id: 5,
-    title: "Landing Brutal",
-    description: "Página de conversión con diseño impactante",
-    tech: ["Next.js", "Framer Motion", "Vercel"],
+    title: "Velit Esse Cillum",
+    description: "Excepteur sint occaecat cupidatat non proident sunt",
+    tech: ["Velit", "Esse", "Cillum"],
     size: "large",
     color: "bg-white",
     textColor: "text-black"
   },
   {
     id: 6,
-    title: "Game UI",
-    description: "Interfaz de videojuego retro-futurista",
-    tech: ["Unity", "C#", "Figma"],
+    title: "Fugiat Nulla",
+    description: "Pariatur excepteur sint occaecat cupidatat non",
+    tech: ["Fugiat", "Nulla", "Pariatur"],
     size: "small",
     color: "bg-black",
     textColor: "text-white"
@@ -98,26 +98,19 @@ const BentoGrid = () => {
   };
 
   return (
-    <section id="work" className="py-20 px-6">
+    <section id="proyectos" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="text-mono text-[var(--accent)] font-bold text-sm uppercase tracking-widest mb-4">
-            Mis Proyectos
-          </h2>
           <h3 className="text-5xl lg:text-6xl font-black text-grotesk mb-6">
-            BENTO GRID
+            MIS PROYECTOS
           </h3>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Arrastra las cards para explorar. Cada proyecto está diseñado con atención
-            al detalle y optimizado para la mejor experiencia de usuario.
-          </p>
         </div>
 
         {/* Draggable Bento Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[200px]"
+          className="grid grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]"
         >
           {projects.map((project) => (
               <div
@@ -157,10 +150,15 @@ const BentoGrid = () => {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-sm font-bold">
+                    <a
+                      href="https://github.com/dnlaMrno"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-bold hover:opacity-80 transition-opacity"
+                    >
                       <span>Ver Proyecto</span>
                       <span className="transition-transform group-hover:translate-x-1">→</span>
-                    </div>
+                    </a>
                   </div>
 
                   {/* Project Indicator */}
@@ -175,7 +173,7 @@ const BentoGrid = () => {
         {/* Helper Text */}
         <div className="text-center mt-12">
           <p className="text-mono text-sm text-gray-500">
-            ⚡ Explora mis proyectos con diseño brutalist
+            ⚡ Explora mis proyectos
           </p>
         </div>
       </div>

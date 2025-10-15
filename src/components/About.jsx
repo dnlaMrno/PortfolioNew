@@ -59,8 +59,8 @@ const About = () => {
   }, []);
 
   const skills = [
-    'React', 'JavaScript', 'TypeScript', 'GSAP', 'Tailwind CSS',
-    'Framer Motion', 'Three.js', 'Node.js', 'MongoDB', 'Git'
+    'React', 'JavaScript', 'Next', 'GSAP', 'Tailwind CSS',
+    'Vite', 'MySql', 'Node.js', 'MongoDB', 'Git'
   ];
 
   return (
@@ -80,9 +80,9 @@ const About = () => {
 
             <div ref={contentRef} className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Soy <strong>Frontend Developer</strong> especializada en crear experiencias
-                web que combinan diseño brutalist con animaciones fluidas. Mi pasión es
-                transformar ideas complejas en interfaces intuitivas y visualmente impactantes.
+                Soy <strong>Frontend Developer</strong> y me especializo en crear experiencias digitales 
+                modernas, accesibles y fluidas. Mi pasión es transformar ideas complejas en interfaces 
+                intuitivas.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -90,28 +90,6 @@ const About = () => {
                 que van desde e-commerce hasta aplicaciones web complejas, siempre
                 priorizando la experiencia de usuario y la performance.
               </p>
-
-              <div className="pt-6">
-                <h3 className="text-xl font-bold text-grotesk mb-4">Enfoque</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[var(--accent)] rotate-45"></span>
-                    Diseño centrado en el usuario
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[var(--accent)] rotate-45"></span>
-                    Performance y accesibilidad
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[var(--accent)] rotate-45"></span>
-                    Animaciones significativas
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="w-2 h-2 bg-[var(--accent)] rotate-45"></span>
-                    Código limpio y mantenible
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
@@ -119,7 +97,7 @@ const About = () => {
           <div>
             <div className="brutal-card p-8 bg-gray-50">
               <h3 className="text-2xl font-black text-grotesk mb-6">
-                TECH STACK
+                TECNOLOGÍAS
               </h3>
 
               <div ref={skillsRef} className="grid grid-cols-2 gap-4">
@@ -131,27 +109,6 @@ const About = () => {
                     <span className="font-bold text-sm">{skill}</span>
                   </div>
                 ))}
-              </div>
-
-              <div className="mt-8 pt-6 border-t-2 border-black">
-                <div className="grid grid-cols-2 gap-6 text-center">
-                  <div>
-                    <div className="text-3xl font-black text-grotesk text-[var(--accent)]">
-                      15+
-                    </div>
-                    <div className="text-sm text-mono text-gray-600">
-                      Proyectos
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-black text-grotesk text-[var(--accent)]">
-                      98%
-                    </div>
-                    <div className="text-sm text-mono text-gray-600">
-                      Satisfacción
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

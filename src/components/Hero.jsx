@@ -75,9 +75,9 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center px-6 pt-32"
+      className="min-h-screen flex px-6 pt-40 pb-20"
     >
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center mt-16">
         {/* Left Content */}
         <div className="space-y-8">
           <div>
@@ -95,17 +95,25 @@ const Hero = () => {
             ref={descRef}
             className="text-xl text-gray-600 max-w-lg leading-relaxed"
           >
-            Frontend Developer especializado en experiencias web brutalist,
-            animaciones GSAP y interfaces modernas. Drag & drop, smooth scroll,
-            y micro-interacciones que sorprenden.
+            Disfruto resolver problemas, colaborar con equipos multidisciplinarios 
+            y Siempre estoy buscando nuevos desafíos para seguir creciendo.
           </p>
 
           <div ref={ctaRef} className="flex gap-4">
-            <a href="#work" className="brutal-button">
-              Ver Proyectos
+            <a
+              href="/CVDanielaPorras_frontend.pdf"
+              download="CVDanielaPorras_frontend.pdf"
+              className="brutal-button"
+            >
+              Descargar CV
             </a>
-            <a href="#about" className="border-4 border-black bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors no-underline">
-              Sobre Mí
+            <a
+              href="https://www.linkedin.com/in/porras-daniela/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-4 border-black bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors no-underline"
+            >
+              Linkedin
             </a>
           </div>
         </div>
