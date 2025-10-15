@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import pixelPortrait from '/images/pixel-portrait.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,14 +124,14 @@ const Hero = () => {
           <div className="brutal-card p-4 aspect-square bg-black overflow-hidden glitch-container">
             <div className="w-full h-full relative">
               <img
-                src="public/images/pixel-portrait.png"
+                src={pixelPortrait}
                 alt="Daniela Porras - Pixel Art Portrait"
                 className="w-full h-full object-cover pixel-art glitch-image"
                 style={{
                   imageRendering: 'pixelated',
                   imageRendering: '-moz-crisp-edges',
                   imageRendering: 'crisp-edges',
-                  backgroundImage: 'url(/pixel-portrait.png)',
+                  backgroundImage: `url(${pixelPortrait})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
