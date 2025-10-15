@@ -4,6 +4,10 @@ Un portfolio moderno con diseño brutalist que combina elementos visuales impact
 
 ![Portfolio Preview](public/screenshots/portfolio-preview.png)
 
+⭐ Si este proyecto te resultó útil, ¡dale una estrella!
+
+🔗 **[Ver Demo en Vivo](https://portfolio-new-inky-nine.vercel.app/)**
+
 ## ✨ Características
 
 - **🎯 Diseño Brutalist Moderno**: Interfaces llamativas con elementos gráficos Bold
@@ -166,31 +170,3 @@ npm run build
 npm run build
 # Configura GitHub Actions o sube manualmente
 ```
-
-## 🤝 Contribución
-
-Las contribuciones son bienvenidas. Para cambios importantes:
-
-1. Fork el proyecto
-2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push al branch (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más información.
-
-## 👩‍💻 Autora
-
-**Daniela Porras** - Frontend Developer
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/porras-daniela/)
-- 🐙 [GitHub](https://github.com/dnlaMrno)
-- 📧 Email: demporras@gmail.com
-
----
-
-⭐ Si este proyecto te resultó útil, ¡dale una estrella!
-
-🔗 **[Ver Demo en Vivo](https://tu-portfolio-url.com)**
