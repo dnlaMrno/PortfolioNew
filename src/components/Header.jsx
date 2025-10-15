@@ -39,10 +39,10 @@ const Header = () => {
             ref={logoRef}
             className="w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl border-4 border-black"
           >
-            <span className="text-grotesk">B</span>
+            <span className="text-grotesk">D</span>
           </div>
           <div>
-            <div className="font-bold text-lg text-grotesk">Belén Porras</div>
+            <div className="font-bold text-lg text-grotesk">Daniela Porras</div>
             <div className="text-sm text-muted text-mono">Frontend Dev</div>
           </div>
         </div>

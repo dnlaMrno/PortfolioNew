@@ -98,10 +98,10 @@ const Contact = () => {
             <div className="form-element">
               <h4 className="font-bold text-grotesk mb-2">Email</h4>
               <a
-                href="mailto:belen@example.com"
+                href="mailto:daniela@example.com"
                 className="text-[var(--accent)] hover:text-white transition-colors"
               >
-                belen@example.com
+                daniela@example.com
               </a>
             </div>
             <div className="form-element">
@@ -110,7 +110,7 @@ const Contact = () => {
                 href="#"
                 className="text-[var(--accent)] hover:text-white transition-colors"
               >
-                /in/belen-porras
+                /in/daniela-porras
               </a>
             </div>
             <div className="form-element">
@@ -119,7 +119,7 @@ const Contact = () => {
                 href="#"
                 className="text-[var(--accent)] hover:text-white transition-colors"
               >
-                @belenporras
+                @danielaporras
               </a>
             </div>
           </div>

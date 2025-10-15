@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f8f8f8;
+  --bg: #ffffff;
   --fg: #000000;
-  --accent: #ff6b35;
+  --accent: #000000;
   --brutal-border: #000000;
   --text-muted: #666666;
   --shadow: rgba(0, 0, 0, 0.12);
@@ -74,12 +74,12 @@
 
   .brutal-button {
     @apply bg-black text-white border-4 border-black px-6 py-3 font-bold text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer;
-    box-shadow: 4px 4px 0px 0px rgba(255,107,53,1);
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.3);
     letter-spacing: 0.1em;
   }
 
   .brutal-button:hover {
-    box-shadow: 8px 8px 0px 0px rgba(255,107,53,1);
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.3);
     transform: translate(-4px, -4px);
   }
 
@@ -110,5 +110,12 @@
 
   .text-muted {
     color: var(--text-muted);
+  }
+
+  .pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
   }
 }

@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const heroRef = useRef(null);
   const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
   const descRef = useRef(null);
   const ctaRef = useRef(null);
   const imageRef = useRef(null);
@@ -19,11 +18,6 @@ const Hero = () => {
     tl.fromTo(titleRef.current,
       { y: 100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out' }
-    )
-    .fromTo(subtitleRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
-      '-=0.8'
     )
     .fromTo(descRef.current,
       { y: 30, opacity: 0 },
@@ -57,25 +51,19 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center px-6 pt-20"
+      className="min-h-screen flex items-center justify-center px-6 pt-32"
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className="space-y-8">
           <div>
-            <h2
-              ref={subtitleRef}
-              className="text-mono text-[var(--accent)] font-bold text-sm uppercase tracking-widest mb-4"
-            >
-              Portfolio 2024
-            </h2>
             <h1
               ref={titleRef}
               className="text-6xl lg:text-8xl font-black text-grotesk leading-none"
             >
-              BRUTAL
+              DANIELA
               <br />
-              <span className="text-[var(--accent)]">DESIGN</span>
+              <span className="text-[var(--accent)]">PORRAS</span>
             </h1>
           </div>
 
@@ -96,32 +84,22 @@ const Hero = () => {
               Contacto
             </button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t-4 border-black">
-            <div>
-              <div className="text-3xl font-black text-grotesk">15+</div>
-              <div className="text-sm text-mono text-gray-600">PROYECTOS</div>
-            </div>
-            <div>
-              <div className="text-3xl font-black text-grotesk">3+</div>
-              <div className="text-sm text-mono text-gray-600">AÑOS EXP</div>
-            </div>
-            <div>
-              <div className="text-3xl font-black text-grotesk">100%</div>
-              <div className="text-sm text-mono text-gray-600">BRUTAL</div>
-            </div>
-          </div>
         </div>
 
         {/* Right Content - Visual */}
         <div ref={imageRef} className="relative">
-          <div className="brutal-card p-8 aspect-square flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-            <div className="text-center space-y-4">
-              <div className="w-24 h-24 bg-[var(--accent)] border-4 border-black mx-auto flex items-center justify-center">
-                <span className="text-white text-3xl font-black">B</span>
-              </div>
-              <div className="text-mono text-sm font-bold">DRAG ME AROUND</div>
+          <div className="brutal-card p-4 aspect-square flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src="/images/pixel-portrait.png"
+                alt="Daniela Porras - Pixel Art Portrait"
+                className="w-full h-full object-contain rounded-sm pixel-art"
+                style={{
+                  imageRendering: 'pixelated',
+                  imageRendering: '-moz-crisp-edges',
+                  imageRendering: 'crisp-edges'
+                }}
+              />
             </div>
           </div>
 

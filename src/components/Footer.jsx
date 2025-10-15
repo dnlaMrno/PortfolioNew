@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Left */}
           <div className="text-center md:text-left">
             <div className="font-black text-grotesk text-xl mb-2">
-              BELÉN PORRAS
+              DANIELA PORRAS
             </div>
             <div className="text-mono text-sm text-gray-400">
               Frontend Developer • Brutal Design Enthusiast
